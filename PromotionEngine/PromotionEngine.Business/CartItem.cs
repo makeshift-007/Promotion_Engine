@@ -2,7 +2,7 @@
 {
     public class CartItem
     {
-        public CartItem(Product product, int quantity = 0)
+        public CartItem(Product product, int quantity)
         {
             if (product == null)
                 throw new System.ArgumentNullException("Invaid Product!!");
