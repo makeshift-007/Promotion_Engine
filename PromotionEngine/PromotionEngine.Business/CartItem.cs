@@ -7,7 +7,7 @@ namespace PromotionEngine.Business
         public CartItem(Product product, int quantity)
         {
             if (product == null)
-                throw new System.ArgumentNullException("Invaid Product!!");
+                throw new System.ArgumentNullException("Product","Invaid Product!!");
 
             Product = product;
             Quantity = quantity;

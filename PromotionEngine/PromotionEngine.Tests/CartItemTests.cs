@@ -55,9 +55,9 @@ namespace PromotionEngine.Business.Tests
             var quantity = 10;
 
             //Act
-            var exception = Assert.Throws<System.ArgumentException>(() => GenerateSUT(null, quantity));
+            var exception = Assert.Throws<System.ArgumentNullException>(() => GenerateSUT(null, quantity));
             //Assert
-            Assert.Equal("Invaid Product!!", exception.Message);
+            Assert.Equal("Invaid Product!! (Parameter 'Product')", exception.Message);
         }
 
 
