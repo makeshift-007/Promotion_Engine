@@ -57,7 +57,7 @@ namespace PromotionEngine.Business.Tests
             //Act
             var exception = Assert.Throws<System.ArgumentNullException>(() => GenerateSUT(null, quantity));
             //Assert
-            Assert.Equal("Invaid Product!! (Parameter 'Product')", exception.Message);
+            Assert.Equal("Invalid Product!! (Parameter 'Product')", exception.Message);
         }
 
 
