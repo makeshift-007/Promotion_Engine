@@ -22,7 +22,7 @@ namespace PromotionEngine.Business.Tests
             //Arrange            
             var sut = GenerateSUT();
             var orders = new MockOrders();
-            var expectedResult = 140;
+            var expectedResult = 220;
 
             //Act
             var amount = sut.GetPromotionAmount(orders.Order2());

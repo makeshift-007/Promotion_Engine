@@ -12,7 +12,7 @@ namespace PromotionEngine.Business
         {
             return new List<IPromotion>
             {
-                new NItemsPromotion('A',3,50),
+                new NItemsPromotion('A',3,130),
                 new NItemsPromotion('B',2,45),
                 new CombineItemsPromotion(new List<char>{'C','D'},30),
             };
