@@ -12,7 +12,7 @@ namespace PromotionEngine.Business
             Product = product;
             Quantity = quantity;
         }
-        public char SKU
+        public string SKU
         {
             get
             {

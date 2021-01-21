@@ -5,10 +5,10 @@ namespace PromotionEngine.Business.Promotions
 {
     public class CombineItemsPromotion : IPromotion
     {
-        private readonly List<char> promotionSkus;
+        private readonly List<string> promotionSkus;
         private readonly int promotionAmount;
 
-        public CombineItemsPromotion(List<char> skus, int promotionAmount)
+        public CombineItemsPromotion(List<string> skus, int promotionAmount)
         {
             this.promotionSkus = skus;
             this.promotionAmount = promotionAmount;

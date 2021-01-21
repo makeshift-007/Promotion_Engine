@@ -24,7 +24,7 @@ namespace PromotionEngine.Business.Tests.Mocks
             return _items;
         }
 
-        public CartItem GetCartItem(char sku)
+        public CartItem GetCartItem(string sku)
         {
             return _items.FirstOrDefault(m => m.SKU == sku);
         }

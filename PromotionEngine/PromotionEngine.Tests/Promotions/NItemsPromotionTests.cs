@@ -9,9 +9,9 @@ namespace PromotionEngine.Business.Tests.Promotions
 {
    public class NItemsPromotionTests
     {
-        private NItemsPromotion GenerateSUT(char skus,int promoQty, int promotionAmount)
+        private NItemsPromotion GenerateSUT(string sku,int promoQty, int promotionAmount)
         {
-            return new NItemsPromotion(skus, promoQty, promotionAmount);
+            return new NItemsPromotion(sku, promoQty, promotionAmount);
         }
 
         [Fact(DisplayName = "GetAmount: Should Calculate Total Promotion Amount")]
@@ -19,7 +19,7 @@ namespace PromotionEngine.Business.Tests.Promotions
         {
             //Arrange             
             var bundleAmount = 130;
-            var sut = GenerateSUT('A',3, bundleAmount);
+            var sut = GenerateSUT("A",3, bundleAmount);
             var orders = new MockOrders();
             //Act
             var amount = sut.GetAmount(orders.Order3());

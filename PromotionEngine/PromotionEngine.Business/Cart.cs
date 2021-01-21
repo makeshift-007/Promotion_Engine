@@ -20,7 +20,7 @@ namespace PromotionEngine.Business
             this.checkOutManager = checkOutManager;
         }
 
-        public void AddItem(char sku, int quantity = 1)
+        public void AddItem(string sku, int quantity = 1)
         {
             var item = _items.FirstOrDefault(m => m.SKU == sku);
             if (item == null)
@@ -32,7 +32,7 @@ namespace PromotionEngine.Business
 
         }
 
-        public void RemoveItem(char sku, int quantity = 1)
+        public void RemoveItem(string sku, int quantity = 1)
         {
             var item = _items.FirstOrDefault(m => m.SKU == sku);
             if (item != null)

@@ -11,7 +11,7 @@ namespace PromotionEngine.Business.Tests.Promotions
     [Trait("Category", "Business")]
     public class CombinedItemsPromotionsTest
     {
-        private CombineItemsPromotion GenerateSUT(List<char> skus, int promotionAmount)
+        private CombineItemsPromotion GenerateSUT(List<string> skus, int promotionAmount)
         {
             return new CombineItemsPromotion(skus, promotionAmount);
         }
@@ -21,7 +21,7 @@ namespace PromotionEngine.Business.Tests.Promotions
         {
             //Arrange
             var bundleAmount = 30;
-            var sut = GenerateSUT(new List<char> { 'C','D'}, bundleAmount);
+            var sut = GenerateSUT(new List<string> { "C","D"}, bundleAmount);
             var orders = new MockOrders();
             //Act
             var amount = sut.GetAmount(orders.Order3());

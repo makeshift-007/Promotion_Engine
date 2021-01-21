@@ -2,6 +2,6 @@
 {
     public interface IProductRepository
     {
-        Product GetProduct(char sku);
+        Product GetProduct(string sku);
     }
 }

@@ -2,12 +2,12 @@
 {
     public class Product
     {
-        public Product(char sku, int price)
+        public Product(string sku, int price)
         {
             SKU = sku;
             Price = price;
         }
-        public char SKU { get; }
+        public string SKU { get; }
         public int Price { get; }
     }
 }

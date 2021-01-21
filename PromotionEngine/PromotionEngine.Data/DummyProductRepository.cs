@@ -13,10 +13,10 @@ namespace PromotionEngine.Data
         {
             _products = new List<Product>
             {
-                new Product('A',50),
-                new Product('B',30),
-                new Product('C',20),
-                new Product('D',15)
+                new Product("A",50),
+                new Product("B",30),
+                new Product("C",20),
+                new Product("D",15)
             };
         }
         public List<Product> GetAll()
@@ -24,7 +24,7 @@ namespace PromotionEngine.Data
             return _products;
         }
 
-        public Product GetProduct(char sku)
+        public Product GetProduct(string sku)
         {
             return _products.FirstOrDefault(m => m.SKU == sku);
         }

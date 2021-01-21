@@ -8,11 +8,11 @@ namespace PromotionEngine.Business.Promotions
 
     public class NItemsPromotion : IPromotion
     {
-        private readonly char sku;
+        private readonly string sku;
         private readonly int promotionQty;
         private readonly int promotionAmount;
 
-        public NItemsPromotion(char sku, int promotionQty, int promotionAmount)
+        public NItemsPromotion(string sku, int promotionQty, int promotionAmount)
         {
             this.sku = sku;
             this.promotionQty = promotionQty;

@@ -11,10 +11,10 @@ namespace PromotionEngine.Console
             var cart = new Cart(new DummyProductRepository(),
                 new CheckOutManager(new PromotionManager()));
 
-            cart.AddItem('A', 3);
-            cart.AddItem('B', 5);
-            cart.AddItem('C', 1);
-            cart.AddItem('D', 1);
+            cart.AddItem("A", 3);
+            cart.AddItem("B", 5);
+            cart.AddItem("C", 1);
+            cart.AddItem("D", 1);
 
             System.Console.WriteLine("Final Amount:" + cart.GetCheckoutAmount());
 
@@ -22,10 +22,11 @@ namespace PromotionEngine.Console
              cart = new Cart(new DummyProductRepository(),
            new CheckOutManager(new PromotionManager()));
 
-            cart.AddItem('A', 1);
-            cart.AddItem('B', 1);
-            cart.AddItem('C', 1);
-            
+            cart.AddItem("A", 1);
+            cart.AddItem("B", 1);
+            cart.AddItem("C", 1);
+
+
 
             System.Console.WriteLine("Final Amount:" + cart.GetCheckoutAmount());
 
@@ -34,9 +35,9 @@ namespace PromotionEngine.Console
              cart = new Cart(new DummyProductRepository(),
            new CheckOutManager(new PromotionManager()));
 
-            cart.AddItem('A', 5);
-            cart.AddItem('B', 5);
-            cart.AddItem('C', 1);            
+            cart.AddItem("A", 5);
+            cart.AddItem("B", 5);
+            cart.AddItem("C", 1);            
 
             System.Console.WriteLine("Final Amount:" + cart.GetCheckoutAmount());
 

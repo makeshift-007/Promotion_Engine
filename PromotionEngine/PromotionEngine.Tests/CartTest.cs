@@ -27,7 +27,7 @@ namespace PromotionEngine.Business.Tests
             //Arrange
             var productRepoMock = new Mock<IProductRepository>();
             var productsMockedData = new Products();
-            var productSku = 'A';
+            var productSku = Products.SampleSKU;
             productRepoMock.Setup(m => m.GetProduct(productSku)).Returns(productsMockedData.GetProduct(productSku));
             var sut = GenerateSUT(productRepoMock);
 
@@ -48,7 +48,7 @@ namespace PromotionEngine.Business.Tests
             //Arrange
             var productRepoMock = new Mock<IProductRepository>();
             var productsMockedData = new Products();
-            var productSku = 'A';
+            var productSku = Products.SampleSKU;
             productRepoMock.Setup(m => m.GetProduct(productSku)).Returns(productsMockedData.GetProduct(productSku));
             var sut = GenerateSUT(productRepoMock);
 
@@ -71,7 +71,7 @@ namespace PromotionEngine.Business.Tests
             var productRepoMock = new Mock<IProductRepository>();
             var checkoutManagerMock = new Mock<ICheckOutManager>();
             var productsMockedData = new Products();
-            var productSku = 'A';
+            var productSku = Products.SampleSKU;
             productRepoMock.Setup(m => m.GetProduct(productSku)).Returns(productsMockedData.GetProduct(productSku));
             var sut = GenerateSUT(productRepoMock);
             sut.AddItem(productSku);
@@ -92,7 +92,7 @@ namespace PromotionEngine.Business.Tests
             var productRepoMock = new Mock<IProductRepository>();
             var checkoutManagerMock = new Mock<ICheckOutManager>();
             var productsMockedData = new Products();
-            var productSku = 'A';
+            var productSku = Products.SampleSKU;
             productRepoMock.Setup(m => m.GetProduct(productSku)).Returns(productsMockedData.GetProduct(productSku));
             checkoutManagerMock.Setup(m => m.GetAmount(It.IsAny<List<CartItem>>())).Returns(100);            
             var sut = GenerateSUT(productRepoMock, checkoutManagerMock);

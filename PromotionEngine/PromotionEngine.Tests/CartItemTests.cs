@@ -20,7 +20,7 @@ namespace PromotionEngine.Business.Tests
         {
             //Arrange           
             var productsMockedData = new Products();
-            var productSku = 'A';
+            var productSku = Products.SampleSKU;
             var product = productsMockedData.GetProduct(productSku);
             var quantity = 10;
             //Act
@@ -37,7 +37,7 @@ namespace PromotionEngine.Business.Tests
         {
             //Arrange           
             var productsMockedData = new Products();
-            var productSku = 'A';
+            var productSku = Products.SampleSKU;
             var product = productsMockedData.GetProduct(productSku);
             var quantity = 10;
             var sut = GenerateSUT(product, quantity);
