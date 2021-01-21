@@ -1,6 +1,7 @@
 using Moq;
 using PromotionEngine.Business.Tests.Mocks;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
@@ -9,12 +10,14 @@ namespace PromotionEngine.Business.Tests
     [Trait("Category", "Business")]
     public class CartTest
     {
-        private Cart GenerateSUT(Mock<IProductRepository> productRepoMock = null)
+        private Cart GenerateSUT(Mock<IProductRepository> productRepoMock = null, Mock<ICheckOutManager> checkoutManager = null)
         {
             if (productRepoMock == null)
                 productRepoMock = new Mock<IProductRepository>();
+            if (checkoutManager == null)
+                checkoutManager = new Mock<ICheckOutManager>();
 
-            return new Cart(productRepoMock.Object);
+            return new Cart(productRepoMock.Object, checkoutManager.Object);
         }
 
         [Fact(DisplayName = "AddItem: Should Add Item in cart")]
@@ -65,6 +68,7 @@ namespace PromotionEngine.Business.Tests
         {
             //Arrange
             var productRepoMock = new Mock<IProductRepository>();
+            var checkoutManagerMock = new Mock<ICheckOutManager>();
             var productsMockedData = new Products();
             var productSku = 'A';
             productRepoMock.Setup(m => m.GetProduct(productSku)).Returns(productsMockedData.GetProduct(productSku));
@@ -75,8 +79,27 @@ namespace PromotionEngine.Business.Tests
             sut.RemoveItem(productSku);
 
             //Assert
-            var foundItem = sut.Items.FirstOrDefault(m => m.SKU == productSku);            
-            Assert.Null(foundItem);            
+            var foundItem = sut.Items.FirstOrDefault(m => m.SKU == productSku);
+            Assert.Null(foundItem);
+        }
+
+
+        [Fact(DisplayName = "GetCheckoutAmount: Should return Total Cart Amount")]
+        public void GetCheckoutAmount_IsCalled_ShouldReturnTotalCartAmount()
+        {
+            //Arrange        
+            var productRepoMock = new Mock<IProductRepository>();
+            var checkoutManagerMock = new Mock<ICheckOutManager>();
+            var productsMockedData = new Products();
+            var productSku = 'A';
+            productRepoMock.Setup(m => m.GetProduct(productSku)).Returns(productsMockedData.GetProduct(productSku));
+            checkoutManagerMock.Setup(m => m.GetAmount(It.IsAny<List<CartItem>>())).Returns(100);            
+            var sut = GenerateSUT(productRepoMock, checkoutManagerMock);
+            //Act
+            var amount = sut.GetCheckoutAmount();
+            //Assert
+            Assert.Equal(100, amount);
+            checkoutManagerMock.Verify(m => m.GetAmount(It.IsAny<List<CartItem>>()), Times.Once);
         }
     }
 }

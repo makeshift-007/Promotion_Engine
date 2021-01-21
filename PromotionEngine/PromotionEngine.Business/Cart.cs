@@ -8,13 +8,15 @@ namespace PromotionEngine.Business
     {
         List<CartItem> _items;
         private readonly IProductRepository _productRepo;
+        private readonly ICheckOutManager checkOutManager;
 
         public List<CartItem> Items { get { return _items; } }
 
-        public Cart(IProductRepository productRepo)
+        public Cart(IProductRepository productRepo, ICheckOutManager checkOutManager)
         {
             _items = new List<CartItem>();
             _productRepo = productRepo;
+            this.checkOutManager = checkOutManager;
         }
 
         public void AddItem(char sku, int quantity = 1)
@@ -44,7 +46,7 @@ namespace PromotionEngine.Business
 
         public int GetCheckoutAmount()
         {
-            return _items.Sum(m => m.GetAmount());
+            return checkOutManager.GetAmount(_items);
         }
     }
 }
