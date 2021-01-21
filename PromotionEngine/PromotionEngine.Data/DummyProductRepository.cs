@@ -2,15 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace PromotionEngine.Business.Tests.Mocks
+namespace PromotionEngine.Data
 {
-    public class Products
+    public class DummyProductRepository : IProductRepository
     {
         List<Product> _products;
 
-        public Products()
+        public DummyProductRepository()
         {
             _products = new List<Product>
             {

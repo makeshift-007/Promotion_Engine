@@ -6,4 +6,6 @@ namespace PromotionEngine.Business
     {
         int GetPromotionAmount(List<CartItem> items);
     }
+
+
 }

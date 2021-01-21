@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PromotionEngine.Business;
+using PromotionEngine.Data;
+using System;
 
 namespace PromotionEngine.Console
 {
@@ -6,7 +8,16 @@ namespace PromotionEngine.Console
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello World!");
+            var cart = new Cart(new DummyProductRepository(),
+                new CheckOutManager(new PromotionManager()));
+
+            cart.AddItem('A', 3);
+            cart.AddItem('B', 5);
+            cart.AddItem('C', 1);
+            cart.AddItem('D', 1);
+
+            System.Console.WriteLine("Final Amount:" + cart.GetCheckoutAmount());
+            System.Console.ReadLine();
         }
     }
 }

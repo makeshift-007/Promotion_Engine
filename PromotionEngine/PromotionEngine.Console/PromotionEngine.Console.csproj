@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PromotionEngine.Business\PromotionEngine.Business.csproj" />
+    <ProjectReference Include="..\PromotionEngine.Data\PromotionEngine.Data.csproj" />
   </ItemGroup>
 
 </Project>

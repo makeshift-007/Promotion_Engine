@@ -1,4 +1,6 @@
-﻿namespace PromotionEngine.Business
+﻿using PromotionEngine.Shared;
+
+namespace PromotionEngine.Business
 {
     public class CartItem
     {

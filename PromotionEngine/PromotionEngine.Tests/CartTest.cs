@@ -1,5 +1,6 @@
 using Moq;
 using PromotionEngine.Business.Tests.Mocks;
+using PromotionEngine.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;

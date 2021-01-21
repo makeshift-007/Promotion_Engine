@@ -8,7 +8,7 @@ namespace PromotionEngine.Business
     /// <summary>
     /// Can be used for applying promotions and taxes
     /// </summary>
-    public class CheckOutManager
+    public class CheckOutManager: ICheckOutManager
     {
         private readonly IPromotionManager promotionManager;
 
